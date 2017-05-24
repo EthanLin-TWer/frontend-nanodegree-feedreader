@@ -27,10 +27,22 @@ $(function () {
     });
 
 
-    /* TODO: Write a test that loops through each feed
+    /*
      * in the allFeeds object and ensures it has a URL defined
      * and that the URL is not empty.
      */
+    it('all elements in allFeeds should have a url property', () => {
+      const expected = [
+        'http://blog.udacity.com/feed',
+        'http://feeds.feedburner.com/CssTricks',
+        'http://feeds.feedburner.com/html5rocks',
+        'http://feeds.feedburner.com/udacity-linear-digressions'
+      ]
+      allFeeds.forEach((feed, i) => {
+        expect(feed.url).not.toBeUndefined()
+        expect(feed.url).toBe(expected[i])
+      })
+    });
 
 
     /* TODO: Write a test that loops through each feed
