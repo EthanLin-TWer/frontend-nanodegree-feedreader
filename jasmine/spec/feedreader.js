@@ -36,11 +36,11 @@ $(function () {
         'http://feeds.feedburner.com/CssTricks',
         'http://feeds.feedburner.com/html5rocks',
         'http://feeds.feedburner.com/udacity-linear-digressions'
-      ]
+      ];
       allFeeds.forEach((feed, i) => {
-        expect(feed.url).not.toBeUndefined()
-        expect(feed.url).toBe(expected[i])
-      })
+        expect(feed.url).not.toBeUndefined();
+        expect(feed.url).toBe(expected[i]);
+      });
     });
 
 
@@ -54,10 +54,10 @@ $(function () {
         'CSS Tricks',
         'HTML5 Rocks',
         'Linear Digressions'
-      ]
+      ];
       allFeeds.forEach((feed, i) => {
-        expect(feed.name).not.toBeUndefined()
-        expect(feed.name).toBe(expected[i])
+        expect(feed.name).not.toBeUndefined();
+        expect(feed.name).toBe(expected[i]);
       })
     })
   });
