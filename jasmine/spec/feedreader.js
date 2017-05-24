@@ -26,7 +26,6 @@ $(function () {
       expect(allFeeds.length).not.toBe(0);
     });
 
-
     /*
      * in the allFeeds object and ensures it has a URL defined
      * and that the URL is not empty.
@@ -49,6 +48,18 @@ $(function () {
      * in the allFeeds object and ensures it has a name defined
      * and that the name is not empty.
      */
+    it('all elements in allFeeds should have a name property', () => {
+      const expected = [
+        'Udacity Blog',
+        'CSS Tricks',
+        'HTML5 Rocks',
+        'Linear Digressions'
+      ]
+      allFeeds.forEach((feed, i) => {
+        expect(feed.name).not.toBeUndefined()
+        expect(feed.name).toBe(expected[i])
+      })
+    })
   });
 
 
