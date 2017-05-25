@@ -58,14 +58,20 @@ $(function () {
       const menuHidden = $('body').hasClass('menu-hidden');
 
       expect(menuHidden).toBe(true)
+    });
+
+    it('should appear when the menu icon is clicked', (done) => {
+      const menuIcon = $('.menu-icon-link')[0];
+
+      menuIcon.click();
+      expect($('body').hasClass('menu-hidden')).toBe(false);
+
+      menuIcon.click();
+      expect($('body').hasClass('menu-hidden')).toBe(true);
+
+      done();
     })
   })
-
-  /* TODO: Write a test that ensures the menu changes
-   * visibility when the menu icon is clicked. This test
-   * should have two expectations: does the menu display when
-   * clicked and does it hide when clicked again.
-   */
 
   /* TODO: Write a new test suite named "Initial Entries" */
 
