@@ -107,9 +107,29 @@ $(function () {
     beforeEach(() => {
       const header = $('.header-title').text();
       expect(header).toBe('Udacity Blog');
+
+      jasmine.Ajax.install()
+    })
+
+    afterEach(() => {
+      jasmine.Ajax.uninstall()
     })
 
     it('should the content of the feed container really being changed', (done) => {
+      const onSuccess = jasmine.createSpy('success');
+      const expectUrl = 'https://rsstojson.udacity.com/parseFeed'
+      const expectResponse = {
+        feed: {
+          entries: [
+            {link: 'blog.udacity.com/some/article', title: 'Awesome Women', contentSnippet: 'awesome'}
+          ]
+        }
+      };
+      jasmine.Ajax.stubRequest(expectUrl).andReturn(expectResponse);
+      loadFeed(1, done);
+
+      expect(jasmine.Ajax.requests.mostRecent().url).toBe(expectUrl);
+      expect(onSuccess).toHaveBeenCalled(expectResponse);
       done()
     })
   })
