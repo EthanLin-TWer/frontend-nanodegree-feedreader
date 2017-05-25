@@ -82,11 +82,20 @@ $(function () {
       loadFeed(0, done)
     })
 
+    // TODO: [Linesh][5/25/17] figure out why done() should be called inside both beforeEach and after expectation
     it('should have at least a single .entry element within the .feed container', (done) => {
       const feedContainer = $('.feed');
       const entryElements = feedContainer.children('.entry-link');
 
       expect(entryElements.length).toBeGreaterThan(0);
+      done()
+    });
+
+    it('should set the header title when asynchronous call is done', (done) => {
+      const headerTitle = $('.header-title');
+
+      expect(headerTitle).not.toBeUndefined();
+      expect(headerTitle.text()).toBe('Udacity Blog');
       done()
     })
   })
