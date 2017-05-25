@@ -8,6 +8,8 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
+/*global allFeeds loadFeed:true*/
 $((() => {
   /* This is our first test suite - a test suite just contains
    * a related set of tests. This suite is all about the RSS
@@ -31,7 +33,7 @@ $((() => {
         'http://blog.udacity.com/feed',
         'http://feeds.feedburner.com/CssTricks',
         'http://feeds.feedburner.com/html5rocks',
-        'http://feeds.feedburner.com/udacity-linear-digressions',
+        'http://feeds.feedburner.com/udacity-linear-digressions'
       ];
       allFeeds.forEach((feed, i) => {
         expect(feed.url).not.toBeUndefined();

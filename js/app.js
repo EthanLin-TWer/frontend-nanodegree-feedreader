@@ -6,6 +6,8 @@
  * jQuery.
  */
 
+/*global google Handlebars:true*/
+
 // The names and URLs to all of the feeds we'd like available.
 var allFeeds = [
   {
@@ -45,10 +47,10 @@ function loadFeed(id, cb) {
     feedName = allFeeds[id].name;
 
   $.ajax({
-    type: "POST",
+    type: 'POST',
     url: 'https://rsstojson.udacity.com/parseFeed',
     data: JSON.stringify({url: feedUrl}),
-    contentType: "application/json",
+    contentType: 'application/json',
     success: function (result, status) {
 
       var container = $('.feed'),
@@ -79,7 +81,7 @@ function loadFeed(id, cb) {
         cb();
       }
     },
-    dataType: "json"
+    dataType: 'json'
   });
 }
 
