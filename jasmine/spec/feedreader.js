@@ -103,11 +103,7 @@ $(function () {
   describe('New Feed Selection', () => {
     // TODO: [Linesh][5/25/17] tests are actually tied to css selector of the page, and no way to mock them, all real tests
     // TODO: [Linesh][5/25/17] implementations should open a backdoor for the done() for test, not ideal
-    // TODO: [Linesh][5/25/17] is it a good practice to expect in beforeEach()? otherwise how would you do it?
     beforeEach(() => {
-      const header = $('.header-title').text();
-      expect(header).toBe('Udacity Blog');
-
       jasmine.Ajax.install()
     })
 
