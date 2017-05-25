@@ -53,7 +53,6 @@ $((() => {
     });
   });
 
-  // TODO: [Linesh][5/25/17] Update somewhere of customizing todolist in WebStorm. online editor: http://regexr.com/
   // TODO: [Linesh][5/25/17] not a good thing that test actually affects production code
   // TODO: [Linesh][5/25/17] add Udacity eslint configuration so that it can be reused anywhere in the project and reviews
   describe('The menu', () => {
