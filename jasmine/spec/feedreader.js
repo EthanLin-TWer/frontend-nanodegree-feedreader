@@ -57,22 +57,24 @@ $(function () {
   // TODO: [Linesh][5/25/17] not a good thing that test actually affects production code
   // TODO: [Linesh][5/25/17] add Udacity eslint configuration so that it can be reused anywhere in the project and reviews
   describe('The menu', () => {
+    const menuIcon = $('.menu-icon-link')[0];
+
     it('should be hidden by default', () => {
       const menuHidden = $('body').hasClass('menu-hidden');
 
       expect(menuHidden).toBe(true);
     });
 
-    it('should appear when the menu icon is clicked', (done) => {
-      const menuIcon = $('.menu-icon-link')[0];
+    it('should always have a menu icon', () => {
+      expect(menuIcon).not.toBeUndefined()
+    });
 
+    it('should toggle when the menu icon is clicked', () => {
       menuIcon.click();
       expect($('body').hasClass('menu-hidden')).toBe(false);
 
       menuIcon.click();
       expect($('body').hasClass('menu-hidden')).toBe(true);
-
-      done();
     })
   })
 
