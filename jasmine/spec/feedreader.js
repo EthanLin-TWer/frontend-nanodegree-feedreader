@@ -101,7 +101,15 @@ $(function () {
   })
 
   describe('New Feed Selection', () => {
+    // TODO: [Linesh][5/25/17] tests are actually tied to css selector of the page, and no way to mock them, all real tests
+    // TODO: [Linesh][5/25/17] implementations should open a backdoor for the done() for test, not ideal
+    beforeEach(done => {
+      loadFeed(0, done)
+    })
 
+    it('should the content of the feed container really being changed', () => {
+      // done()
+    })
   })
 
   /* TODO: Write a test that ensures when a new feed is loaded
