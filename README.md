@@ -35,5 +35,5 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 
 ---
 
-[http://linesh.tw/frontend-nanodegree-feedreader]: http://linesh.tw/frontend-nanodegree-feedreader
+[http://linesh.tw/frontend-nanodegree-feedreader]: http://blog.linesh.tw/frontend-nanodegree-feedreader
 [Installing npm]: https://nodejs.org/en/download/package-manager/
