@@ -54,7 +54,6 @@ $((() => {
   });
 
   // TODO: [Linesh][5/25/17] not a good thing that test actually affects production code, in both performance or behaviours
-  // TODO: [Linesh][5/25/17] add Udacity eslint configuration so that it can be reused anywhere in the project and reviews
   describe('The menu', () => {
     const menuIcon = $('.menu-icon-link')[0];
 
