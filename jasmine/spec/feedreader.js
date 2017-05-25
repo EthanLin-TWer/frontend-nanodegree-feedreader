@@ -84,6 +84,7 @@ $((() => {
       const feedContainer = $('.feed');
       const entryElements = feedContainer.children('.entry-link');
 
+      expect(feedContainer).not.toBeUndefined();
       expect(entryElements.length).toBeGreaterThan(0);
       done();
     });
@@ -94,6 +95,10 @@ $((() => {
       expect(headerTitle).not.toBeUndefined();
       expect(headerTitle.text()).toBe('Udacity Blog');
       done();
+    });
+
+    afterEach((done) => {
+      loadFeed(0, done);
     });
   });
 
@@ -109,6 +114,10 @@ $((() => {
 
       const html5Feeds = $('.feed a.entry-link');
       expect(html5Feeds).not.toBe(cssFeeds);
+    });
+
+    afterEach((done) => {
+      loadFeed(0, done);
     });
   });
 })());
