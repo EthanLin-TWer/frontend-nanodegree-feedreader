@@ -75,7 +75,6 @@ $((() => {
     });
   });
 
-  // TODO: [Linesh][5/25/17] no dependency injection, all data are prepared inside the production code, which is not good for testing
   describe('Initial Entries', () => {
     beforeEach((done) => {
       loadFeed(0, done);
