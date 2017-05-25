@@ -103,39 +103,18 @@ $(function () {
   describe('New Feed Selection', () => {
     // TODO: [Linesh][5/25/17] tests are actually tied to css selector of the page, and no way to mock them, all real tests
     // TODO: [Linesh][5/25/17] implementations should open a backdoor for the done() for test, not ideal
-    let onSuccess = jasmine.createSpy('success');
-    let request
+    beforeEach(done => {
+      loadFeed(1, done)
+    })
 
-    beforeEach((done) => {
-      jasmine.Ajax.install();
+    it('should update content after new feeds selected and loaded', (done) => {
+      const cssFeeds = $('.feed a.entry-link');
 
-      const expectUrl = 'https://rsstojson.udacity.com/parseFeed';
+      loadFeed(2, done);
 
-      loadFeed(1, done);
-
-      request = jasmine.Ajax.requests.mostRecent();
-      expect(request.url).toBe(expectUrl);
-      expect(request.method).toBe('POST');
-      done()
-    });
-
-    it('should the content of the feed container really being changed', (done) => {
-      const expectResponse = {
-        feed: {
-          entries: [
-            {link: 'blog.udacity.com/some/article', title: 'Awesome Women', contentSnippet: 'awesome'}
-          ]
-        }
-      };
-
-      request.respondWith(expectResponse);
-      expect(onSuccess).toHaveBeenCalledWith(expectResponse);
-      done()
-    });
-
-    afterEach(() => {
-      jasmine.Ajax.uninstall();
-    });
+      const html5Feeds = $('.feed a.entry-link');
+      expect(html5Feeds).not.toBe(cssFeeds);
+    })
   })
 
   /* TODO: Write a test that ensures when a new feed is loaded
