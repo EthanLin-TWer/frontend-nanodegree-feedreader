@@ -80,7 +80,6 @@ $((() => {
       loadFeed(0, done);
     });
 
-    // TODO: [Linesh][5/25/17] figure out why done() should be called inside both beforeEach and after expectation
     it('should have at least a single .entry element within the .feed container', (done) => {
       const feedContainer = $('.feed');
       const entryElements = feedContainer.children('.entry-link');
