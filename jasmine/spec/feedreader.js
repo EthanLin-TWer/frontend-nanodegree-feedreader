@@ -13,7 +13,7 @@ $(function () {
    * a related set of tests. This suite is all about the RSS
    * feeds definitions, the allFeeds variable in our application.
    */
-  describe('RSS Feeds', function () {
+  describe('RSS Feeds', () => {
     /* This is our first test - it tests to make sure that the
      * allFeeds variable has been defined and that it is not
      * empty. Experiment with this before you get started on
@@ -21,7 +21,7 @@ $(function () {
      * allFeeds in app.js to be an empty array and refresh the
      * page?
      */
-    it('are defined', function () {
+    it('are defined', () => {
       expect(allFeeds).toBeDefined();
       expect(allFeeds.length).not.toBe(0);
     });
@@ -31,7 +31,7 @@ $(function () {
         'http://blog.udacity.com/feed',
         'http://feeds.feedburner.com/CssTricks',
         'http://feeds.feedburner.com/html5rocks',
-        'http://feeds.feedburner.com/udacity-linear-digressions'
+        'http://feeds.feedburner.com/udacity-linear-digressions',
       ];
       allFeeds.forEach((feed, i) => {
         expect(feed.url).not.toBeUndefined();
@@ -44,13 +44,13 @@ $(function () {
         'Udacity Blog',
         'CSS Tricks',
         'HTML5 Rocks',
-        'Linear Digressions'
+        'Linear Digressions',
       ];
       allFeeds.forEach((feed, i) => {
         expect(feed.name).not.toBeUndefined();
         expect(feed.name).toBe(expected[i]);
-      })
-    })
+      });
+    });
   });
 
   // TODO: [Linesh][5/25/17] Update somewhere of customizing todolist in WebStorm. online editor: http://regexr.com/
@@ -66,7 +66,7 @@ $(function () {
     });
 
     it('should always have a menu icon', () => {
-      expect(menuIcon).not.toBeUndefined()
+      expect(menuIcon).not.toBeUndefined();
     });
 
     it('should toggle when the menu icon is clicked', () => {
@@ -75,14 +75,14 @@ $(function () {
 
       menuIcon.click();
       expect($('body').hasClass('menu-hidden')).toBe(true);
-    })
-  })
+    });
+  });
 
   // TODO: [Linesh][5/25/17] no dependency injection, all data are prepared inside the production code, which is not good for testing
   describe('Initial Entries', () => {
     beforeEach((done) => {
-      loadFeed(0, done)
-    })
+      loadFeed(0, done);
+    });
 
     // TODO: [Linesh][5/25/17] figure out why done() should be called inside both beforeEach and after expectation
     it('should have at least a single .entry element within the .feed container', (done) => {
@@ -90,7 +90,7 @@ $(function () {
       const entryElements = feedContainer.children('.entry-link');
 
       expect(entryElements.length).toBeGreaterThan(0);
-      done()
+      done();
     });
 
     it('should set the header title when asynchronous call is done', (done) => {
@@ -98,17 +98,17 @@ $(function () {
 
       expect(headerTitle).not.toBeUndefined();
       expect(headerTitle.text()).toBe('Udacity Blog');
-      done()
-    })
-  })
+      done();
+    });
+  });
 
   describe('New Feed Selection', () => {
     // TODO: [Linesh][5/25/17] tests are actually tied to css selector of the page, and no way to mock them, all real tests
     // TODO: [Linesh][5/25/17] implementations should open a backdoor for the done() for test, not ideal
     // TODO: [Linesh][5/25/17] tests affects the real production code, in both performance or behaviours
-    beforeEach(done => {
-      loadFeed(1, done)
-    })
+    beforeEach((done) => {
+      loadFeed(1, done);
+    });
 
     it('should update content after new feeds selected and loaded', (done) => {
       const cssFeeds = $('.feed a.entry-link');
@@ -117,7 +117,6 @@ $(function () {
 
       const html5Feeds = $('.feed a.entry-link');
       expect(html5Feeds).not.toBe(cssFeeds);
-    })
-  })
-
+    });
+  });
 }());
