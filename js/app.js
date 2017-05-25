@@ -128,8 +128,6 @@ $(function () {
    * on the body to perform the hiding/showing of our menu.
    */
   menuIcon.on('click', function () {
-    console.log('click event triggered')
     $('body').toggleClass('menu-hidden');
-    console.log('click event finished')
   });
 }());
