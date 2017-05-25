@@ -76,17 +76,21 @@ $(function () {
     })
   })
 
+  // TODO: [Linesh][5/25/17] no dependency injection, all data are prepared inside the production code, which is not good for testing
   describe('Initial Entries', () => {
+    beforeEach((done) => {
+      loadFeed(0, done)
+    })
 
+    it('should have at least a single .entry element within the .feed container', (done) => {
+      const feedContainer = $('.feed');
+      const entryElements = feedContainer.children('.entry-link');
+
+      expect(entryElements.length).toBeGreaterThan(0);
+      done()
+    })
   })
 
-
-  /* TODO: Write a test that ensures when the loadFeed
-   * function is called and completes its work, there is at least
-   * a single .entry element within the .feed container.
-   * Remember, loadFeed() is asynchronous so this test will require
-   * the use of Jasmine's beforeEach and asynchronous done() function.
-   */
 
   /* TODO: Write a new test suite named "New Feed Selection" */
 
