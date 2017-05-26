@@ -89,8 +89,8 @@ $((() => {
       expect(headerTitle.text()).toBe('Udacity Blog');
     });
 
-    afterEach((done) => {
-      loadFeed(0, done);
+    afterEach(() => {
+      loadFeed(0);
     });
   });
 
