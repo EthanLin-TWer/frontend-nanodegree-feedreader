@@ -104,7 +104,9 @@ $((() => {
 
       loadFeed(2, () => {
         const html5Feeds = $('.feed a.entry-link');
+
         expect(html5Feeds).not.toBe(cssFeeds);
+        expect(cssFeeds.text()).not.toEqual(html5Feeds.text());
 
         done();
       });
