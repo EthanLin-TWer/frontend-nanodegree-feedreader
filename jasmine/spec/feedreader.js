@@ -82,11 +82,10 @@ $((() => {
       expect(entryElements.length).toBeGreaterThan(0);
     });
 
-    xit('should set the header title when asynchronous call is done', (done) => {
+    it('should set the header title when asynchronous call is done', () => {
       const headerTitle = $('.header-title');
 
       expect(headerTitle.text()).toBe('Udacity Blog');
-      done();
     });
 
     afterEach((done) => {
