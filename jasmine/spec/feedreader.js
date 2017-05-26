@@ -85,7 +85,6 @@ $((() => {
     xit('should set the header title when asynchronous call is done', (done) => {
       const headerTitle = $('.header-title');
 
-      expect(headerTitle).not.toBeUndefined();
       expect(headerTitle.text()).toBe('Udacity Blog');
       done();
     });
