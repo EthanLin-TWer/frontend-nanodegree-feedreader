@@ -33,7 +33,7 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 20. [x] When complete - all of your tests should pass.
 21. [x] Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
 22. [x] Project review
-23. [ ] Investigate why tests fail randomly in gh-pages
+23. [x] Investigate why tests fail randomly in gh-pages
 
 ---
 
