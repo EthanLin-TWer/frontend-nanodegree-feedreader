@@ -29,15 +29,9 @@ $((() => {
     });
 
     it('all elements in allFeeds should have a url property', () => {
-      const expected = [
-        'http://blog.udacity.com/feed',
-        'http://feeds.feedburner.com/CssTricks',
-        'http://feeds.feedburner.com/html5rocks',
-        'http://feeds.feedburner.com/udacity-linear-digressions'
-      ];
-      allFeeds.forEach((feed, i) => {
+      allFeeds.forEach((feed) => {
         expect(feed.url).not.toBeUndefined();
-        expect(feed.url).toBe(expected[i]);
+        expect(feed.url).toEqual(jasmine.any(String));
       });
     });
 
