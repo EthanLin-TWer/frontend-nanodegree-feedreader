@@ -267,9 +267,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-udacity@^0.0.4:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/eslint-config-udacity/-/eslint-config-udacity-0.0.4.tgz#e9dcf38165ed375ae2fb62b1d565f768b0182e32"
+eslint-config-udacity@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-udacity/-/eslint-config-udacity-1.0.4.tgz#51921050ab4623913d0ffc427ff8ec5f7f78ca30"
 
 eslint-import-resolver-node@^0.2.0:
   version "0.2.3"
