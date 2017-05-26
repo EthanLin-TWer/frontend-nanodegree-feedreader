@@ -2,6 +2,11 @@
 
 > 课程梗概：测试是一项重要的技能。有些开发人员使用 TDD 来进行日常开发，以保证软件质量。无论你的公司是否使用 TDD 进行开发，测试都是一项重要的技能。在这个项目中，你将学到如何使用 jasmine 来进行事件测试和 DOM 操作的测试等。
 
+## How to start
+
+* Simply visit [http://linesh.tw/frontend-nanodegree-feedreader][], or:
+* download the project(using git or browser) to your local, open your terminal and run command `npm install -g http-server && http-server -c-1 -o` on the project root to start the application in your default browser. A [globally installed npm][Installing npm] is required to execute the command.
+
 ## 如何启动项目
 
  * 很简单，访问 [http://linesh.tw/frontend-nanodegree-feedreader][] 即可。或者：
