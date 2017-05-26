@@ -11,6 +11,7 @@
 
 /*global allFeeds loadFeed:true*/
 $((() => {
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
   /* This is our first test suite - a test suite just contains
    * a related set of tests. This suite is all about the RSS
    * feeds definitions, the allFeeds variable in our application.
