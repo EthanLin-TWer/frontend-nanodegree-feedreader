@@ -33,19 +33,15 @@ $((() => {
       allFeeds.forEach((feed) => {
         expect(feed.url).not.toBeUndefined();
         expect(feed.url).toEqual(jasmine.any(String));
+        expect(feed.url.trim().length).toBeGreaterThan(0);
       });
     });
 
     it('all elements in allFeeds should have a name property', () => {
-      const expected = [
-        'Udacity Blog',
-        'CSS Tricks',
-        'HTML5 Rocks',
-        'Linear Digressions',
-      ];
-      allFeeds.forEach((feed, i) => {
+      allFeeds.forEach((feed) => {
         expect(feed.name).not.toBeUndefined();
-        expect(feed.name).toBe(expected[i]);
+        expect(feed.name).toEqual(jasmine.any(String));
+        expect(feed.name.trim().length).toBeGreaterThan(0);
       });
     });
   });
