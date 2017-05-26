@@ -72,7 +72,7 @@ $((() => {
     });
   });
 
-  describe('Initial Entries', () => {
+  xdescribe('Initial Entries', () => {
     beforeEach((done) => {
       loadFeed(0, done);
     });
@@ -94,7 +94,7 @@ $((() => {
     });
   });
 
-  xdescribe('New Feed Selection', () => {
+  describe('New Feed Selection', () => {
     beforeEach((done) => {
       loadFeed(1, done);
     });
@@ -102,10 +102,12 @@ $((() => {
     it('should update content after new feeds selected and loaded', (done) => {
       const cssFeeds = $('.feed a.entry-link');
 
-      loadFeed(2, done);
+      loadFeed(2, () => {
+        const html5Feeds = $('.feed a.entry-link');
+        expect(html5Feeds).not.toBe(cssFeeds);
 
-      const html5Feeds = $('.feed a.entry-link');
-      expect(html5Feeds).not.toBe(cssFeeds);
+        done();
+      });
     });
 
     afterEach((done) => {
