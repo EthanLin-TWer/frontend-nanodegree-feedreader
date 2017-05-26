@@ -55,7 +55,7 @@ $((() => {
     });
   });
 
-  describe('The menu', () => {
+  xdescribe('The menu', () => {
     const menuIcon = $('.menu-icon-link')[0];
 
     it('should be hidden by default', () => {
@@ -77,7 +77,7 @@ $((() => {
     });
   });
 
-  describe('Initial Entries', () => {
+  xdescribe('Initial Entries', () => {
     beforeEach((done) => {
       loadFeed(0, done);
     });
@@ -104,7 +104,7 @@ $((() => {
     });
   });
 
-  describe('New Feed Selection', () => {
+  xdescribe('New Feed Selection', () => {
     beforeEach((done) => {
       loadFeed(1, done);
     });
