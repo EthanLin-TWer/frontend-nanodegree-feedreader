@@ -16,7 +16,7 @@ $((() => {
    * a related set of tests. This suite is all about the RSS
    * feeds definitions, the allFeeds variable in our application.
    */
-  xdescribe('RSS Feeds', () => {
+  describe('RSS Feeds', () => {
     /* This is our first test - it tests to make sure that the
      * allFeeds variable has been defined and that it is not
      * empty. Experiment with this before you get started on
@@ -50,7 +50,7 @@ $((() => {
     });
   });
 
-  xdescribe('The menu', () => {
+  describe('The menu', () => {
     const menuIcon = $('.menu-icon-link')[0];
 
     it('should be hidden by default', () => {
@@ -72,7 +72,7 @@ $((() => {
     });
   });
 
-  xdescribe('Initial Entries', () => {
+  describe('Initial Entries', () => {
     beforeEach((done) => {
       loadFeed(0, done);
     });
