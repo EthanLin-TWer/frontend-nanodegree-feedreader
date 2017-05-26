@@ -25,7 +25,7 @@
   "homepage": "https://github.com/linesh-simplicity/frontend-nanodegree-feedreader#readme",
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-config-udacity": "^0.0.4",
     "eslint-plugin-import": "^2.3.0"
   }
 }
